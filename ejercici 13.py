@@ -1,0 +1,9 @@
+x = float(input("Introdueix un nombre: "))
+y = float(input("Introdueix un nombre: "))
+z = x + y
+q = x * y
+w = x / y
+e = x - y
+r = x ** y
+t = x // y
+o = x % y

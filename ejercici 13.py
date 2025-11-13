@@ -6,8 +6,8 @@ opcio=int(input("""Introdueix una opcio:
                 5. elevacio
                 6. raiz
                 7. tanto por ciento"""))
-x = int(input("Introdueix un nombre: "))
-y = int(input("Introdueix un nombre: "))
+x = float(input("Introdueix un nombre: "))
+y = float(input("Introdueix un nombre: "))
 if opcio==1:
 z = x + y
 print("La suma de {} i {} és {}".format(x, y, z))

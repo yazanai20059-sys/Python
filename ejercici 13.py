@@ -1,5 +1,5 @@
-x = int(input("Introdueix un nombre: "))
-y = int(input("Introdueix un nombre: "))
+x = float(input("Introdueix un nombre: "))
+y = float(input("Introdueix un nombre: "))
 z = x + y
 print("La suma de {} i {} és {}".format(x, y, z))
 q = x * y

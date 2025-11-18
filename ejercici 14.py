@@ -1,133 +1,139 @@
 def menu_principal():
     opcio=0
-    while opcio<1 or opcio>3:
+    while opcio<1 or opcio>4:
         opcio=int(input("""Selecciona una operació:
                     1. calculadora decimal
-                    2. calculadora real(flotant)
-                    3. sortir \n"""))
-    if opcio>0 and opcio<4:
-       return opcio 
-    else:
-       print("Opcio no correcta, torna a intentar-ho! \n")
-       
+                    2. calculadora real (flotant)
+                    3. conversió de bases
+                    4. sortir \n"""))
+    return opcio
     
+
 def menu_calculador():  
     opcio=0
-    while opcio<1 or opcio>7:
+    while opcio<0 or opcio>7:
         opcio=int(input("""Introdueix una opcio: 
                 1. suma
                 2. multiplicacio
                 3. divisio
                 4. resta
                 5. elevacio
-                6. raiz
-                7. tanto por ciento
+                6. raiz (divisió entera)
+                7. tant per cent (modul)
                 0. sortir \n"""))
-    if opcio>0 and opcio<8:
-       return opcio 
-    else:
-       print("Opcio no correcta, torna a intentar-ho! \n")
+    return opcio
+
 
 def calculadora_decimal(opcio):
-    if opcio>0 and opcio<8:
-        a = int(input("Introdueix el premer nombre: "))
+    if 1 <= opcio <= 7:
+        a = int(input("Introdueix el primer nombre: "))
         b = int(input("Introdueix el segon nombre: "))
     match(opcio):
         case 1:
-            # suma
-            print("estic fent la suma \n")
-            c = a + b
-            print("La suma de {} i {} és {}".format(a, b, c))
+            print("La suma és:", a + b)
         case 2:
-            # multiplicacio
-            print("estic fent la multiplicacio \n")
-            c = a * b
-            print("La multiplicacion de {} i {} és {}".format(a, b, c))
+            print("La multiplicació és:", a * b)
         case 3:
-            # divisio
-            print("estic fent la divisio \n")
-            c = a / b
-            print("La division de {} i {} és {}".format(a, b, c))
+            print("La divisió és:", a / b)
         case 4:
-            # resta
-            print("estic fent la resta \n")
-            c = a - b
-            print("La resta de {} i {} és {}".format(a, b, c))
+            print("La resta és:", a - b)
         case 5:
-            # elevacio
-            print("estic fent la elevacio \n")
-            c = a ** b
-            print("La elevacion de {} i {} és {}".format(a, b, c))
+            print("L'elevació és:", a ** b)
         case 6:
-            # raiz
-            print("estic fent la raiz \n")
-            c = a // b
-            print("La raiz de {} i {} és {}".format(a, b, c))
+            print("La divisió entera és:", a // b)
         case 7:
-            # tanto por ciento
-            print("estic fent el tanto por ciento \n")
-            c = a % b
-            print("el tanto por ciento de {} i {} és {}".format(a, b, c))
+            print("El tant per cent és:", a % b)
         case _:
-            # opcio no valida
-            print("gracias , fins aviat \n")
-        
+            print("Sortint...")
+
+
 def calculadora_real(opcio):
-    if opcio>0 and opcio<8:
-        a = float(input("Introdueix el premer nombre: "))
+    if 1 <= opcio <= 7:
+        a = float(input("Introdueix el primer nombre: "))
         b = float(input("Introdueix el segon nombre: "))
     match(opcio):
         case 1:
-            # suma
-            print("estic fent la suma \n")
-            c = a + b
-            print("La suma de {} i {} és {}".format(a, b, c))
+            print("La suma és:", a + b)
         case 2:
-            # multiplicacio
-            print("estic fent la multiplicacio \n")
-            c = a * b
-            print("La multiplicacion de {} i {} és {}".format(a, b, c))
+            print("La multiplicació és:", a * b)
         case 3:
-            # divisio
-            print("estic fent la divisio \n")
-            c = a / b
-            print("La division de {} i {} és {}".format(a, b, c))
+            print("La divisió és:", a / b)
         case 4:
-            # resta
-            print("estic fent la resta \n")
-            c = a - b
-            print("La resta de {} i {} és {}".format(a, b, c))
+            print("La resta és:", a - b)
         case 5:
-            # elevacio
-            print("estic fent la elevacio \n")
-            c = a ** b
-            print("La elevacion de {} i {} és {}".format(a, b, c))
+            print("L'elevació és:", a ** b)
         case 6:
-            # raiz
-            print("estic fent la raiz \n")
-            c = a // b
-            print("La raiz de {} i {} és {}".format(a, b, c))
+            print("La divisió entera és:", a // b)
         case 7:
-            # tanto por ciento
-            print("estic fent el tanto por ciento \n")
-            c = a % b
-            print("el tanto por ciento de {} i {} és {}".format(a, b, c))
+            print("El tant per cent és:", a % b)
         case _:
-            # opcio no valida
-            print("gracias , fins aviat \n")
+            print("Sortint...")
 
-# Programa principal
+
+
+
+def menu_bases():
+    print("""
+Selecciona la base d'origen:
+    1. Binari
+    2. Octal
+    3. Decimal
+    4. Hexadecimal
+""")
+    op = 0
+    while op < 1 or op > 4:
+        op = int(input("Opció: "))
+    return op
+
+
+def base_to_decimal(valor, base):
+    if base == 1:   # binari
+        return int(valor, 2)
+    elif base == 2: # octal
+        return int(valor, 8)
+    elif base == 3: # decimal
+        return int(valor, 10)
+    elif base == 4: # hexadecimal
+        return int(valor, 16)
+
+
+def decimal_to_all(n):
+    print("\nConversions:")
+    print("Binari:", bin(n)[2:])
+    print("Octal:", oct(n)[2:])
+    print("Decimal:", n)
+    print("Hexadecimal:", hex(n)[2:].upper())
+    print()
+
+
+def conversio_bases():
+    origen = menu_bases()
+    valor = input("Introdueix el nombre a convertir: ")
+
+    try:
+        dec = base_to_decimal(valor, origen)
+        decimal_to_all(dec)
+    except ValueError:
+        print(" Error: el nombre no és vàlid per aquesta base.")
+
+
+
+
 op = 1
-while op!= 0:
+while op != 4:
     op = menu_principal()
-    if op==1:
-        # calculadora decimal
-        print("Has seleccionat la calculadora decimal \n")
+
+    if op == 1:
+        print("Has seleccionat la calculadora decimal\n")
         calculadora_decimal(menu_calculador())
-    elif op==2:
-        # calculadora real(flotant)
-        print("Has seleccionat la calculadora real(flotant) \n")
+
+    elif op == 2:
+        print("Has seleccionat la calculadora real (flotant)\n")
         calculadora_real(menu_calculador())
+
+    elif op == 3:
+        print("Has seleccionat la conversió de bases\n")
+        conversio_bases()
+
     else:
-        print("adios! \n")
-        op=0
+        print("Adéu!")

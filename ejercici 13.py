@@ -56,7 +56,7 @@ def calculadora_decimal(opcio):
         case 5:
             # elevacio
             print("estic fent la elevacio \n")
-            c = a ** b4 days ago
+            c = a ** b
             print("La elevacion de {} i {} és {}".format(a, b, c))
         case 6:
             # raiz

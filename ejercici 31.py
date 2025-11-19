@@ -22,13 +22,13 @@ for i in range(4):
     edats.append(edat)
 
 # Imprimir les dades tabulades
-print("\n" + "="*60)
+print("\n" + "_"*60)
 print(f"Any actual: {any_actual}")
-print("="*60)
+print("_"*60)
 print(f"{'Nom':<20} {'Data naixement':<20} {'Anys que farà':<15}")
-print("-"*60)
+print("_"*60)
 
 for i in range(4):
     print(f"{noms[i]:<20} {anys_naixement[i]:<20} {edats[i]:<15}")
 
-print("="*60)
+print("_"*60)

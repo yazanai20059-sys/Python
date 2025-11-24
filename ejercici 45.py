@@ -2,13 +2,13 @@
 numero = input("Introdueix un número: ")
 
 # Sumar els dígits
-suma = numero
+suma = 0
 for digit in numero:
     if digit.isdigit():  # Ignorar el signe negatiu si n'hi ha
-        suma += (digit)
+        suma += int(digit)
 
 # Determinar si és parell o senar
-if suma / 2 == 0:
+if suma % 2 == 0:
     resultat = "parell"
 else:
     resultat = "senar"

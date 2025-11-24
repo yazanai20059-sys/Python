@@ -1,13 +1,8 @@
-def contiene_o(palabra):
-    if 'o' in palabra:
+def contiene_o(p):
+    if 'o' in p:
         return True
     else:
         return False
 
-palabra = input("Ingresa una palabra: ")
-
-resultado = contiene_o(palabra)
-if resultado:
-    print("true")
-else:
-    print("false")
+p = input("Ingresa una palabra: ")
+print(contiene_o(p))

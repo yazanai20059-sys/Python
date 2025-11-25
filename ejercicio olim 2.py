@@ -24,4 +24,4 @@ def convertir_frases(s):
 n = int(input(""))
 llista=llegir_frases(n)
 for i,e in enumerate(llista):
-    llista[i]= convertir_frases(e)
+    llista[i]= convertir_frases(e) 

@@ -1,5 +1,9 @@
 def sumar_llista(lista):
-    return sum(lista) 
+    sumar = 0  
+    for numero in lista:
+        sumar += numero  
+    return sumar
+
 def multiplicar_llista(lista):
     resultado = 1  
     for numero in lista:

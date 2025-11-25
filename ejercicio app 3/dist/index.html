@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Multi-funcional</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER / BARRA DE NAVEGACIÓN -->
+    <header class="header">
+        <div class="header-left">
+            <button class="icon-btn" id="homeBtn" title="Inicio">
+                <i class="fas fa-home"></i>
+            </button>
+            <button class="icon-btn" id="menuBtn" title="Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="header-center">
+            <h1 class="logo">MiApp</h1>
+        </div>
+
+        <div class="header-right">
+            <button class="icon-btn" id="searchBtn" title="Buscar">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="icon-btn" id="userBtn" title="Usuario">
+                <i class="fas fa-user"></i>
+            </button>
+            <button class="icon-btn" id="cartBtn" title="Carrito">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="badge" id="cartBadge">3</span>
+            </button>
+            <button class="icon-btn" id="notificationBtn" title="Notificaciones">
+                <i class="fas fa-bell"></i>
+                <span class="badge notification-badge" id="notificationBadge">5</span>
+            </button>
+            <button class="icon-btn" id="settingsBtn" title="Configuración">
+                <i class="fas fa-cog"></i>
+            </button>
+            <button class="icon-btn" id="chatBtn" title="Chat de Soporte">
+                <i class="fas fa-comments"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- BARRA DE BÚSQUEDA -->
+    <div class="search-bar" id="searchBar">
+        <div class="search-container">
+            <input type="text" placeholder="Buscar..." id="searchInput">
+            <button class="search-submit">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="close-btn" id="closeSearchBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- MENÚ LATERAL -->
+    <nav class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <h2>Menú</h2>
+            <button class="close-btn" id="closeMenuBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="menu-list">
+            <li><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="#"><i class="fas fa-box"></i> Productos</a></li>
+            <li><a href="#"><i class="fas fa-tags"></i> Ofertas</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> Acerca de</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+        
+        <div class="social-media">
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-btn twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-btn linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" class="social-btn youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- PANEL DE USUARIO -->
+    <div class="panel user-panel" id="userPanel">
+        <div class="panel-header">
+            <h3>Mi Cuenta</h3>
+            <button class="close-btn" id="closeUserBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content" id="userContent">
+            <!-- Usuario NO autenticado -->
+            <div class="auth-options" id="authOptions">
+                <button class="btn btn-primary" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                </button>
+                <button class="btn btn-secondary" id="registerBtn">
+                    <i class="fas fa-user-plus"></i> Registrarse
+                </button>
+            </div>
+            
+            <!-- Usuario autenticado (oculto por defecto) -->
+            <div class="user-info" id="userInfo" style="display: none;">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h4 id="userName">Usuario Demo</h4>
+                <p id="userEmail">demo@ejemplo.com</p>
+                <div class="user-actions">
+                    <button class="btn btn-block"><i class="fas fa-user-edit"></i> Mi Perfil</button>
+                    <button class="btn btn-block"><i class="fas fa-shopping-bag"></i> Mis Pedidos</button>
+                    <button class="btn btn-block"><i class="fas fa-heart"></i> Favoritos</button>
+                    <button class="btn btn-block btn-danger" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANEL DE CARRITO -->
+    <div class="panel cart-panel" id="cartPanel">
+        <div class="panel-header">
+            <h3>Carrito de Compras</h3>
+            <button class="close-btn" id="closeCartBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content" id="cartContent">
+            <!-- Carrito con productos -->
+            <div class="cart-items" id="cartItems">
+                <div class="cart-item">
+                    <img src="https://via.placeholder.com/60" alt="Producto">
+                    <div class="cart-item-info">
+                        <h4>Producto 1</h4>
+                        <p>$29.99</p>
+                    </div>
+                    <button class="remove-item"><i class="fas fa-trash"></i></button>
+                </div>
+                <div class="cart-item">
+                    <img src="https://via.placeholder.com/60" alt="Producto">
+                    <div class="cart-item-info">
+                        <h4>Producto 2</h4>
+                        <p>$49.99</p>
+                    </div>
+                    <button class="remove-item"><i class="fas fa-trash"></i></button>
+                </div>
+                <div class="cart-item">
+                    <img src="https://via.placeholder.com/60" alt="Producto">
+                    <div class="cart-item-info">
+                        <h4>Producto 3</h4>
+                        <p>$19.99</p>
+                    </div>
+                    <button class="remove-item"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+            
+            <!-- Carrito vacío (oculto por defecto) -->
+            <div class="empty-cart" id="emptyCart" style="display: none;">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Tu carrito está vacío</p>
+                <button class="btn btn-primary">Explorar Productos</button>
+            </div>
+            
+            <div class="cart-summary" id="cartSummary">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="price">$99.97</span>
+                </div>
+                <button class="btn btn-primary btn-block">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANEL DE NOTIFICACIONES -->
+    <div class="panel notifications-panel" id="notificationsPanel">
+        <div class="panel-header">
+            <h3>Notificaciones</h3>
+            <button class="close-btn" id="closeNotificationsBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content">
+            <div class="notifications-list">
+                <div class="notification-item unread">
+                    <i class="fas fa-gift notification-icon"></i>
+                    <div class="notification-content">
+                        <h4>¡Nueva oferta disponible!</h4>
+                        <p>Descuento del 50% en productos seleccionados</p>
+                        <span class="notification-time">Hace 5 min</span>
+                    </div>
+                </div>
+                <div class="notification-item unread">
+                    <i class="fas fa-truck notification-icon"></i>
+                    <div class="notification-content">
+                        <h4>Tu pedido está en camino</h4>
+                        <p>Pedido #12345 será entregado hoy</p>
+                        <span class="notification-time">Hace 1 hora</span>
+                    </div>
+                </div>
+                <div class="notification-item unread">
+                    <i class="fas fa-star notification-icon"></i>
+                    <div class="notification-content">
+                        <h4>Nuevo producto favorito</h4>
+                        <p>El producto que te gusta ahora está en oferta</p>
+                        <span class="notification-time">Hace 2 horas</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <i class="fas fa-envelope notification-icon"></i>
+                    <div class="notification-content">
+                        <h4>Mensaje del soporte</h4>
+                        <p>Tu consulta ha sido respondida</p>
+                        <span class="notification-time">Ayer</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <i class="fas fa-check-circle notification-icon"></i>
+                    <div class="notification-content">
+                        <h4>Pedido entregado</h4>
+                        <p>Tu pedido #12344 fue entregado con éxito</p>
+                        <span class="notification-time">Hace 2 días</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-block mark-all-read" id="markAllReadBtn">
+                Marcar todas como leídas
+            </button>
+        </div>
+    </div>
+
+    <!-- PANEL DE CONFIGURACIÓN -->
+    <div class="panel settings-panel" id="settingsPanel">
+        <div class="panel-header">
+            <h3>Configuración</h3>
+            <button class="close-btn" id="closeSettingsBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content">
+            <div class="settings-section">
+                <h4><i class="fas fa-palette"></i> Apariencia</h4>
+                <div class="setting-item">
+                    <label>Tema Oscuro</label>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h4><i class="fas fa-bell"></i> Notificaciones</h4>
+                <div class="setting-item">
+                    <label>Notificaciones Push</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>Notificaciones de Email</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h4><i class="fas fa-language"></i> Idioma</h4>
+                <select class="settings-select">
+                    <option selected>Español</option>
+                    <option>English</option>
+                    <option>Français</option>
+                    <option>Português</option>
+                </select>
+            </div>
+
+            <div class="settings-section">
+                <h4><i class="fas fa-shield-alt"></i> Privacidad</h4>
+                <div class="setting-item">
+                    <label>Perfil Público</label>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <button class="btn btn-block">Gestionar Privacidad</button>
+            </div>
+
+            <div class="settings-section">
+                <button class="btn btn-danger btn-block">
+                    <i class="fas fa-trash"></i> Eliminar Cuenta
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAT DE SOPORTE -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <i class="fas fa-headset"></i>
+                <div>
+                    <h4>Soporte en Línea</h4>
+                    <span class="status online">En línea</span>
+                </div>
+            </div>
+            <button class="close-btn" id="closeChatBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p>¡Hola! 👋 Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?</p>
+                    <span class="message-time">Ahora</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" placeholder="Escribe tu mensaje..." id="chatInput">
+            <button class="send-btn" id="sendMessageBtn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content" id="mainContent">
+        <section class="hero">
+            <h2>Bienvenido a MiApp</h2>
+            <p>Explora todas nuestras funcionalidades</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Compra Fácil</h3>
+                <p>Encuentra los mejores productos</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Envío Rápido</h3>
+                <p>Recibe en 24-48 horas</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-lock"></i>
+                <h3>Pago Seguro</h3>
+                <p>Transacciones protegidas</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headphones"></i>
+                <h3>Soporte 24/7</h3>
+                <p>Estamos aquí para ayudarte</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

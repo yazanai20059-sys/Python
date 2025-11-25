@@ -11,7 +11,6 @@ def multiplicar_llista(lista):
     return resultado
 
 # programa principal
-print(sumar_llista([5, 6, 7, 8])) 
-
-
-print(multiplicar_llista([1, 2, 3, 4]))  
+a=[1, 3, 5, 7, 6, 10]
+print("La suma dels elements de la llista és {} val {}".format(a, sumar_llista(a))) 
+print("La multiplicació dels elements de la llista és {} val {}".format(a, multiplicar_llista(a)))

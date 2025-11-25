@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos esenciales -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO -->
+    <meta name="description" content="Aplicación web completa con todas las funcionalidades modernas">
+    <meta name="keywords" content="app, web, desarrollo, tecnología">
+    <meta name="author" content="Tu Nombre">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (redes sociales) -->
+    <meta property="og:title" content="Mi App Completa">
+    <meta property="og:description" content="Una aplicación web profesional">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://tudominio.com">
+    
+    <!-- Título -->
+    <title>Mi App Completa | Inicio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <!-- ========== HEADER (Encabezado) ========== -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo de Mi App" width="50" height="50">
+                    <span>Mi App</span>
+                </div>
+                
+                <!-- Menú de navegación -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                
+                <!-- Barra de búsqueda -->
+                <div class="search-bar">
+                    <input type="search" placeholder="Buscar..." aria-label="Buscar">
+                    <button type="submit" aria-label="Botón de búsqueda">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- Botón CTA -->
+                <a href="#registro" class="btn-cta">Registrarse</a>
+                
+                <!-- Menú hamburguesa (móvil) -->
+                <div class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========== MAIN (Contenido principal) ========== -->
+    <main id="main">
+        
+        <!-- Sección Hero -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Bienvenido a Mi App</h1>
+                <p>La solución completa para tus necesidades digitales</p>
+                <button class="btn-primary" onclick="openModal()">Comenzar Ahora</button>
+            </div>
+        </section>
+
+        <!-- Carrusel / Slider -->
+        <section class="slider">
+            <div class="slider-container" id="slider">
+                <div class="slide active">
+                    <img src="https://via.placeholder.com/1200x400/667eea/ffffff?text=Slide+1" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/1200x400/764ba2/ffffff?text=Slide+2" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/1200x400/f093fb/ffffff?text=Slide+3" alt="Slide 3">
+                </div>
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide(-1)" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next" onclick="changeSlide(1)" aria-label="Siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <!-- Contenedor con sidebar -->
+        <div class="content-wrapper">
+            
+            <!-- Contenido principal -->
+            <div class="main-content">
+                
+                <!-- Sección Servicios -->
+                <section id="servicios" class="services">
+                    <h2>Nuestros Servicios</h2>
+                    <div class="services-grid">
+                        <article class="service-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Desarrollo Web</h3>
+                            <p>Creamos sitios web modernos y responsivos</p>
+                        </article>
+                        <article class="service-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Apps Móviles</h3>
+                            <p>Desarrollamos aplicaciones para iOS y Android</p>
+                        </article>
+                        <article class="service-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Marketing Digital</h3>
+                            <p>Estrategias para hacer crecer tu negocio</p>
+                        </article>
+                        <article class="service-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Seguridad</h3>
+                            <p>Protegemos tu información y datos</p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Sección Sobre Nosotros -->
+                <section id="sobre-nosotros" class="about">
+                    <h2>Sobre Nosotros</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>Somos un equipo de profesionales dedicados a crear soluciones digitales innovadoras.</p>
+                            <ul>
+                                <li>✓ Más de 10 años de experiencia</li>
+                                <li>✓ +500 proyectos exitosos</li>
+                                <li>✓ Clientes satisfechos en todo el mundo</li>
+                            </ul>
+                        </div>
+                        <div class="about-image">
+                            <img src="https://via.placeholder.com/500x300/667eea/ffffff?text=Equipo" alt="Nuestro equipo">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección Contacto con Formulario -->
+                <section id="contacto" class="contact">
+                    <h2>Contáctanos</h2>
+                    <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="nombre">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" required aria-required="true">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required aria-required="true">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <select id="asunto" name="asunto">
+                                <option value="consulta">Consulta general</option>
+                                <option value="soporte">Soporte técnico</option>
+                                <option value="ventas">Ventas</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required aria-required="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    </form>
+                </section>
+
+                <!-- Tabla de datos -->
+                <section class="data-table">
+                    <h2>Estadísticas</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Año</th>
+                                <th>Proyectos</th>
+                                <th>Clientes</th>
+                                <th>Crecimiento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2021</td>
+                                <td>120</td>
+                                <td>85</td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <td>2022</td>
+                                <td>180</td>
+                                <td>142</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr>
+                                <td>2023</td>
+                                <td>250</td>
+                                <td>205</td>
+                                <td>39%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
+
+            <!-- ========== SIDEBAR (Barra lateral) ========== -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><a href="#">Tecnología</a></li>
+                        <li><a href="#">Diseño</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Negocios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="widget">
+                    <h3>Enlaces Útiles</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Recursos</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Soporte</a></li>
+                    </ul>
+                </div>
+                
+                <div class="widget ad-widget">
+                    <h3>Publicidad</h3>
+                    <div class="ad-space">
+                        <p>Espacio publicitario</p>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- ========== FOOTER (Pie de página) ========== -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <!-- Columna 1: Sobre nosotros -->
+                <div class="footer-col">
+                    <h4>Sobre Nosotros</h4>
+                    <p>Somos una empresa dedicada a crear soluciones digitales innovadoras para nuestros clientes.</p>
+                </div>
+                
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 3: Legal -->
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 4: Contacto y redes sociales -->
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> info@miapp.com</p>
+                    <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mi App. Todos los derechos reservados.</p>
+                <p><a href="#">Mapa del sitio</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== MODAL (Ventana emergente) ========== -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Registro</h2>
+            <form id="registro" class="modal-form">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Botón scroll to top -->
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript principal -->
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

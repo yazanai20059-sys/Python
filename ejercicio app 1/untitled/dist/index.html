@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Multiidioma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-container {
+            display: block;
+        }
+
+        .dashboard-container {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button[type="submit"], .logout-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover, .logout-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .welcome-message {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .dashboard-content {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        .dashboard-content p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .flag {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Selector de idioma -->
+    <div class="language-selector">
+        <button class="lang-btn active" onclick="changeLanguage('es')">
+            <span class="flag">🇪🇸</span> ES
+        </button>
+        <button class="lang-btn" onclick="changeLanguage('en')">
+            <span class="flag">🇬🇧</span> EN
+        </button>
+        <button class="lang-btn" onclick="changeLanguage('de')">
+            <span class="flag">🇩🇪</span> DE
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Formulario de Login -->
+        <div class="login-container" id="loginContainer">
+            <h1 data-translate="title">Iniciar Sesión</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username" data-translate="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" data-translate="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" data-translate="loginBtn">Iniciar Sesión</button>
+                <p class="error" id="errorMsg"></p>
+            </form>
+        </div>
+
+        <!-- Dashboard después del login -->
+        <div class="dashboard-container" id="dashboardContainer">
+            <h1 data-translate="welcomeTitle">Panel de Control</h1>
+            <p class="welcome-message" data-translate="welcomeMsg">¡Bienvenido, <span id="userDisplay"></span>!</p>
+            
+            <div class="dashboard-content">
+                <h3 data-translate="infoTitle">Información de tu cuenta</h3>
+                <p><strong data-translate="nameLabel">Nombre:</strong> <span id="userName"></span></p>
+                <p><strong data-translate="statusLabel">Estado:</strong> <span data-translate="statusActive">Activo</span></p>
+                <p><strong data-translate="languageLabel">Idioma actual:</strong> <span id="currentLang">Español</span></p>
+                <p data-translate="description">Esta es una página de demostración que permite iniciar sesión y cambiar entre tres idiomas diferentes.</p>
+            </div>
+            
+            <button class="logout-btn" onclick="logout()" data-translate="logoutBtn">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script>
+        // Traducciones
+        const translations = {
+            es: {
+                title: "Iniciar Sesión",
+                username: "Usuario:",
+                password: "Contraseña:",
+                loginBtn: "Iniciar Sesión",
+                welcomeTitle: "Panel de Control",
+                welcomeMsg: "¡Bienvenido, ",
+                infoTitle: "Información de tu cuenta",
+                nameLabel: "Nombre:",
+                statusLabel: "Estado:",
+                statusActive: "Activo",
+                languageLabel: "Idioma actual:",
+                description: "Esta es una página de demostración que permite iniciar sesión y cambiar entre tres idiomas diferentes.",
+                logoutBtn: "Cerrar Sesión",
+                errorMsg: "Usuario o contraseña incorrectos",
+                langName: "Español"
+            },
+            en: {
+                title: "Login",
+                username: "Username:",
+                password: "Password:",
+                loginBtn: "Login",
+                welcomeTitle: "Dashboard",
+                welcomeMsg: "Welcome, ",
+                infoTitle: "Your account information",
+                nameLabel: "Name:",
+                statusLabel: "Status:",
+                statusActive: "Active",
+                languageLabel: "Current language:",
+                description: "This is a demo page that allows you to login and switch between three different languages.",
+                logoutBtn: "Logout",
+                errorMsg: "Incorrect username or password",
+                langName: "English"
+            },
+            de: {
+                title: "Anmelden",
+                username: "Benutzername:",
+                password: "Passwort:",
+                loginBtn: "Anmelden",
+                welcomeTitle: "Dashboard",
+                welcomeMsg: "Willkommen, ",
+                infoTitle: "Ihre Kontoinformationen",
+                nameLabel: "Name:",
+                statusLabel: "Status:",
+                statusActive: "Aktiv",
+                languageLabel: "Aktuelle Sprache:",
+                description: "Dies ist eine Demo-Seite, mit der Sie sich anmelden und zwischen drei verschiedenen Sprachen wechseln können.",
+                logoutBtn: "Abmelden",
+                errorMsg: "Falscher Benutzername oder Passwort",
+                langName: "Deutsch"
+            }
+        };
+
+        let currentLanguage = 'es';
+        let currentUser = null;
+
+        // Función para cambiar idioma
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Actualizar botones activos
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.closest('.lang-btn').classList.add('active');
+
+            // Traducir todos los elementos
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    if (key === 'welcomeMsg' && currentUser) {
+                        element.innerHTML = translations[lang][key] + `<span id="userDisplay">${currentUser}</span>!`;
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Actualizar el nombre del idioma actual
+            document.getElementById('currentLang').textContent = translations[lang].langName;
+        }
+
+        // Manejo del formulario de login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Validación simple (en producción esto debería ser en el servidor)
+            if (username && password.length >= 4) {
+                currentUser = username;
+                document.getElementById('userDisplay').textContent = username;
+                document.getElementById('userName').textContent = username;
+                
+                // Cambiar de vista
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('dashboardContainer').style.display = 'block';
+                
+                // Limpiar error
+                document.getElementById('errorMsg').textContent = '';
+            } else {
+                document.getElementById('errorMsg').textContent = translations[currentLanguage].errorMsg;
+            }
+        });
+
+        // Función de logout
+        function logout() {
+            currentUser = null;
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('dashboardContainer').style.display = 'none';
+            document.getElementById('loginForm').reset();
+        }
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>

@@ -10,6 +10,7 @@ def multiplicar_llista(lista):
         resultado *= numero  
     return resultado
 
+# programa principal
 print(sumar_llista([5, 6, 7, 8])) 
 
 

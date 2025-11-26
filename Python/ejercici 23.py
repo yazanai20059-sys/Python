@@ -1,14 +1,4 @@
 def crear_repetits(numero, caracter):
-    """
-    Retorna el caràcter repetit el número de vegades indicat.
-    
-    Args:
-        numero (int): Nombre de vegades que es repeteix el caràcter
-        caracter (str): Caràcter a repetir
-    
-    Returns:
-        str: String amb el caràcter repetit
-    """
     return caracter * numero
 
 

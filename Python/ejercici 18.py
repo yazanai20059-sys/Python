@@ -4,5 +4,8 @@ def contiene_o(p):
     else:
         return False
 
-p = input("Ingresa una palabra: ")
-print(contiene_o(p))
+palabra = input("Ingrese una palabra: ")
+if contiene_o(palabra):
+    print("La palabra contiene la letra 'o'.")
+else:
+    print("La palabra no contiene la letra 'o'.")

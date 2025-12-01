@@ -1,5 +1,5 @@
 v1 = int(input("intruduix un nombra: "))
-while(v1>=5 and v1<=10) or (v1>=15 and v1<=20):
+while(v1>=5 and v1<=10 and v1!=6) or (v1>=15 and v1<=20 and v1!=16) or (v1>=25 and v1<=30 and v1!=26):
     v1 = int(input("intruduix un nombra: "))
     print(v1)
 print("fi del programa")

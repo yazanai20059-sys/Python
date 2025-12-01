@@ -21,7 +21,7 @@ def menu_calculador():
                 6. raiz (divisió entera)
                 7. tant per cent (modul)
                 0. sortir \n"""))
-    return opcio
+    return opcio 
 
 
 def calculadora_decimal(opcio):

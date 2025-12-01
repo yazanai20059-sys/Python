@@ -1,8 +1,17 @@
-v1 = int(input("intruduix un nombra: "))
-while ((v1 >= 1 and v1 <= 1000)and (v1 % 2 == 1)):
+
+for i in range(1, 1001):
+    if (i%9==0 or i%7==0) and (i%5!=0 and i%8!=0):
+        print(i)
+print("fi del programa")
+
+
+
+
+"""v1 = int(input("intruduix un nombra: "))
+while ((v1 >= 1 and v1 <= 1000)and (v1 % 2 == 0) and (v1 % 4 != 0) and (v1 % 8 != 0)):
     v1 = int(input("intruduix un nombra: "))
     print(v1)
-print("fi del programa")
+print("fi del programa")"""
 
 
 

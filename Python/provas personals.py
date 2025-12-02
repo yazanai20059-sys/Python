@@ -1,4 +1,9 @@
-def entre_nombres(x, y):
+
+
+
+
+
+"""def entre_nombres(x, y):
     if x>y:
         return x, y
     elif y>x:
@@ -8,9 +13,10 @@ def entre_nombres(x, y):
 
 v1=int(input("pose un nomero: "))
 v2=int(input("pose un nomero: "))
-v1, v2 = entre_nombres(v1, v2)
-for e in range(v2, v1+1):
-    print(e)
+v2, v1 = entre_nombres(v1, v2)
+for e in range(v1, v2+1, 2):
+    if e%2==1:
+        print(e)"""
 
 
 

@@ -1,9 +1,26 @@
+def entre_nombres(x, y):
+    if x>y:
+        return x, y
+    elif y>x:
+        return y, x
+    else:
+        return x, y 
 
 v1=int(input("pose un nomero: "))
 v2=int(input("pose un nomero: "))
-v3 = (v1 * v2) /2
-for i in range(v3, 0, -1)
-    print(i)
+v1, v2 = entre_nombres(v1, v2)
+for e in range(v2, v1+1):
+    print(e)
+
+
+
+
+
+"""v1=int(input("pose un nomero: "))
+v2=int(input("pose un nomero: "))
+v3 = (v1 * v2) // 2
+for i in range(v3, -1, -1):
+    print(i)"""
 
 
 

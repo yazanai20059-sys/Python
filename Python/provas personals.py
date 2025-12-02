@@ -1,8 +1,32 @@
 
-for i in range(1, 1001):
+v1=int(input("pose un nomero: "))
+v2=int(input("pose un nomero: "))
+v3 = (v1 * v2) /2
+for i in range(v3, 0, -1)
+    print(i)
+
+
+
+
+
+
+"""def llegir_2_nomeros():
+    if (v3>=25 and v3<=35) or (v3>=105 and v3<=125):
+        print("A")
+    elif (v3>=45 and v3<=65) or (v3>=145 and v3<=165):
+        print("B")
+    else:    
+        print("C")
+
+v1 = int(input("intrudueix un nomaro: "))
+v2 = int(input("intrudueix un nomaro: "))
+v3 = v1 * v2
+llegir_2_nomeros()"""
+
+"""for i in range(1, 1001):
     if (i%9==0 or i%7==0) and (i%5!=0 and i%8!=0):
         print(i)
-print("fi del programa")
+print("fi del programa")"""
 
 
 

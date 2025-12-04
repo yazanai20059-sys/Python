@@ -24,7 +24,7 @@ def llegir_fitxer(nom_fitxer):
         return None
 
 # Exemple d'ús
-fitxer_llegit = llegir_fitxer('/home/hola/exemple.txt')
+fitxer_llegit = llegir_fitxer('/home/youssef/AO/Python/prova.txt')
 if fitxer_llegit:
     print("Contingut del fitxer:")
     print(fitxer_llegit)

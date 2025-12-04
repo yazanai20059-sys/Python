@@ -1,4 +1,4 @@
 def lenp(frase):
     return len(frase)  
 
-print(lenp("hola mundo")) 
+print(lenp("hola mundo, ¿cómo estás?")) 

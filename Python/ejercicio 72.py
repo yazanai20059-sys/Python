@@ -1,4 +1,4 @@
-fitxer_path = '/home/youssef/AO/Python/prova.txt'
+fitxer_path = '/home/youssef/AO/Python/Prova/Ex12.txt'
 
 
 try:

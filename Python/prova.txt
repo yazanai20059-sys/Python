@@ -1,3 +1,0 @@
-Hola món!
-Això és una prova.
-Python és genial per programar.
